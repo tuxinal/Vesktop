@@ -21,8 +21,6 @@ export interface Settings {
     appBadge?: boolean;
     disableMinSize?: boolean;
     clickTrayToShowHide?: boolean;
-    /** @deprecated use customTitleBar */
-    discordWindowsTitleBar?: boolean;
     customTitleBar?: boolean;
 
     checkUpdates?: boolean;
@@ -30,12 +28,27 @@ export interface Settings {
     splashTheming?: boolean;
     splashColor?: string;
     splashBackground?: string;
+
+    spellCheckLanguages?: string[];
+
+    audio?: {
+        workaround?: boolean;
+        granularSelect?: boolean;
+
+        ignoreVirtual?: boolean;
+        ignoreDevices?: boolean;
+        ignoreInputMedia?: boolean;
+
+        onlySpeakers?: boolean;
+        onlyDefaultSpeakers?: boolean;
+    };
 }
 
 export interface State {
     maximized?: boolean;
     minimized?: boolean;
     windowBounds?: Rectangle;
+    displayid: int;
 
     skippedUpdate?: string;
     firstLaunch?: boolean;
